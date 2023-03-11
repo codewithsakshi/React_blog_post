@@ -50,7 +50,7 @@ const featuredPosts = [
 const sidebar = {
   title: 'About',
   description:
-    'Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.',
+    "Our goal is to provide our readers with engaging and informative content that they can enjoy and learn from. We believe that everyone deserves access to quality information, and that's why we make sure to thoroughly research and fact-check all of our articles.",
   archives: [
     { title: 'March 2020', url: '#' },
     { title: 'February 2020', url: '#' },

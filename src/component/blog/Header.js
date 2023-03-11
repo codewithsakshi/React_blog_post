@@ -6,9 +6,29 @@ import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import { useNavigate } from "react-router-dom";
+import {filterDepartment} from "../departmentPages/data"
+import Department from '../departmentPages/Department';
 
 function Header(props) {
   const { sections, title } = props;
+  const [content, setContent] = React.useState([]);
+  const [path, setPath] = React.useState("")
+  const navigate = useNavigate();
+
+  const departmentClick = (section) => {
+   navigate(section);
+  const department =  filterDepartment(section);
+  if(section === "/") {
+    setContent([])
+    return
+  }
+  setContent([...department]);
+  setPath(section);
+  }
+
+  React.useEffect(() => {
+  }, [])
 
   return (
     <React.Fragment>
@@ -42,13 +62,14 @@ function Header(props) {
             noWrap
             key={section.title}
             variant="body2"
-            href={section.url}
             sx={{ p: 1, flexShrink: 0 }}
+            onClick={() => departmentClick(section.url)}
           >
             {section.title}
           </Link>
         ))}
       </Toolbar>
+      {path && <Department blogs={{content}}/>}
     </React.Fragment>
   );
 }

@@ -1,15 +1,16 @@
-import Blog from "./blog/Blog";
+
+import Blog from "./component/blog/Blog"
 import {BrowserRouter as Router, Route, Routes, Switch} from "react-router-dom"
-import Header from "./blog/Header";
+import Header from "./component/blog/Header";
 import Container from '@mui/material/Container';
 
 const sections = [
-  { title: 'Technology', url: '/technology' },
+  { title: 'Home', url: '/' },
   { title: 'Design', url: '/design' },
   { title: 'Culture', url: '/culture' },
-  { title: 'Business', url: '/business' },
+  { title: 'Business', url: '/bussiness' },
   { title: 'Politics', url: '/politics' },
-  { title: 'Opinion', url: '/opinion' },
+  { title: 'Technology', url: '/technology' },
   { title: 'Science', url: '/science' },
   { title: 'Health', url: '/health' },
   { title: 'Style', url: '/style' },
@@ -24,16 +25,16 @@ function App() {
       </Container>
        <Routes>
         <Route path="/" element={<Blog/>}/>
-        <Route path="/technology" element={<h1>Technology</h1>}/>
-        <Route path="/design" element={<h1>Design</h1>}/>
-        <Route path="/culture" element={<h1>Culture</h1>}/>
-        <Route path="/business" element={<h1>Business</h1>}/>
-        <Route path="/politics" element={<h1>Politics</h1>}/>
-        <Route path="/opinion" element={<h1>Opinion</h1>}/>
-        <Route path="/science" element={<h1>Science</h1>}/>
-        <Route path="/health" element={<h1>Health</h1>}/>
-        <Route path="/style" element={<h1>Style</h1>}/>
-        <Route path="/travel" element={<h1>Travel</h1>}/>
+        {/* <Route path="/technology"/>
+        <Route path="/design"/>
+        <Route path="/culture"/>
+        <Route path="/business"/>
+        <Route path="/politics"/>
+        <Route path="/opinion"/>
+        <Route path="/science"/>
+        <Route path="/health"/>
+        <Route path="/style"/>
+        <Route path="/travel"/> */}
       </Routes>
       </div>
   );
